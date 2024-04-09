@@ -9,15 +9,16 @@ namespace WeatherApp.Models
 {
     public class WeatherForeCast
     {
+        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
         public class Clouds
         {
             public int all { get; set; }
         }
 
-        public class Coord
+        public class CoOrd
         {
-            public double lon { get; set; }
-            public double lat { get; set; }
+            public double longitude { get; set; }
+            public double latitude { get; set; }
         }
 
         public class Main
@@ -38,9 +39,9 @@ namespace WeatherApp.Models
             public double _1h { get; set; }
         }
 
-        public class WeatherForecast
+        public class WeatherForecast //Object Orientation
         {
-            public Coord coord { get; set; }
+            public CoOrd coOrd { get; set; }
             public List<Weather> weather { get; set; }
             public string @base { get; set; }
             public Main main { get; set; }
