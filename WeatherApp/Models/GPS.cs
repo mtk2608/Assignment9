@@ -61,10 +61,7 @@ namespace WeatherApp.Models
                 if (location != null)
                     Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
             }
-            // Catch one of the following exceptions:
-            //   FeatureNotSupportedException
-            //   FeatureNotEnabledException
-            //   PermissionException
+
             catch (Exception ex)
             {
                 //Unable to get location
@@ -83,41 +80,6 @@ namespace WeatherApp.Models
                 _cancelTokenSource.Cancel();
         }
 
-        /*async void OnStartListening()
-        {
-            try
-            {
-                Geolocation.LocationChanged += Geolocation_LocationChanged;
-                var request = new GeolocationListeningRequest((GeolocationAccuracy)Accuracy);
-                var success = await Geolocation.StartListeningForegroundAsync(request);
 
-                string status = success
-                    ? "Started listening for foreground location updates"
-                    : "Couldn't start listening";
-            }
-            catch (Exception ex)
-            {
-                // Unable to start listening for location changes
-            }
-        }
-
-        void Geolocation_LocationChanged(object sender, GeolocationLocationChangedEventArgs e)
-        {
-            // Process e.Location to get the new location
-        }
-
-        void OnStopListening()
-        {
-            try
-            {
-                Geolocation.LocationChanged -= Geolocation_LocationChanged;
-                Geolocation.StopListeningForeground();
-                string status = "Stopped listening for foreground location updates";
-            }
-            catch (Exception ex)
-            {
-                // Unable to stop listening for location changes
-            }
-        }*/
     }
 }

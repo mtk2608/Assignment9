@@ -60,6 +60,9 @@
 	  <None Remove="Resources\Images\capetown.jpg" />
 	  <None Remove="Resources\Images\feelslike.png" />
 	  <None Remove="Resources\Images\humidity.png" />
+	  <None Remove="Resources\Images\reload.png" />
+	  <None Remove="Resources\Images\sunrise.png" />
+	  <None Remove="Resources\Images\sunset.png" />
 	  <None Remove="Resources\Images\windspeed.png" />
 	</ItemGroup>
 

@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-//using ThreadNetwork;
 using WeatherApp.Models;
 
 namespace WeatherApp
@@ -43,17 +42,6 @@ namespace WeatherApp
             }
         }
 
-        private int _pressure;
-
-        public int Pressure
-        {
-            get { return _pressure; }
-            set
-            {
-                _pressure = value;
-                OnPropertyChanged();
-            }
-        }
 
         private string _country;
         public string Country
@@ -62,17 +50,6 @@ namespace WeatherApp
             set
             {
                 _country = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private int _clouds;
-        public int Clouds
-        {
-            get { return _clouds; }
-            set
-            {
-                _clouds = value;
                 OnPropertyChanged();
             }
         }
@@ -164,18 +141,6 @@ namespace WeatherApp
         private GPS _gps;
 
 
-        private string _currentWeather;
-
-        /* public string CurrentWeather
-         {
-             get { return _currentWeather; }
-             set
-             {
-                 _currentWeather = value;
-                 OnPropertyChanged();
-             }
-         }*/
-
 
 
         public MainPage()
@@ -231,10 +196,8 @@ namespace WeatherApp
                 TempMin = Math.Round(currentweather.main.temp_min);
                 FeelsLike = Math.Round(currentweather.main.feels_like);
                 Humidity = currentweather.main.humidity;
-                Pressure = currentweather.main.pressure;
                 Country = currentweather.sys.country;
 
-                Clouds = currentweather.clouds.all;
 
                 if (currentweather.weather.Count > 0)
                 {

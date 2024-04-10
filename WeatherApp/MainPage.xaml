@@ -42,7 +42,7 @@
             </StackLayout>
 
             <StackLayout
-                Margin="0,-300,0,0"
+                Margin="0,100,0,0"
                 HorizontalOptions="Center"
                 Orientation="Vertical"
                 VerticalOptions="Center">
@@ -75,41 +75,138 @@
                      VerticalOptions="Center"/>
                 </StackLayout>
 
-                <StackLayout>
-                    <Frame
-                     Grid.Row="2"
-                     Margin="20,-40,20,0"
-                     Padding="0"
-                     CornerRadius="10"
-                     HasShadow="True"
-                     HeightRequest="180"
-                     VerticalOptions="Start">
+                <StackLayout Orientation="Horizontal"
+                             Spacing="80"
+                             >
+                    <Border Grid.Row="2"
+                            HeightRequest="200"
+                            WidthRequest="300"
+                            BackgroundColor="White"
+                            Margin="0,350,0,0">
 
-                        <StackLayout
-                    Grid.Column="1"
-                    HorizontalOptions="CenterAndExpand"
-                    Orientation="Vertical"
-                    Spacing="10">
+                        <VerticalStackLayout>
                             <Image Source="windspeed.png"
-                           HeightRequest="80"
-                           WidthRequest="50"/>
-                            <StackLayout HorizontalOptions="CenterAndExpand" Spacing="7">
-                                <Label
-                            FontAttributes="Bold"
-                            FontSize="12"
-                            HorizontalOptions="Center"
-                            Text="{Binding Wind, StringFormat='{0} km/h'}"
-                            TextColor="Black" />
-                                <Label
-                            FontSize="11"
-                            HorizontalOptions="Center"
-                            Text="Wind Speed"
-                            TextColor="#7D7D7D" />
-                            </StackLayout>
-                        </StackLayout>
+                                   HeightRequest="130"
+                                   WidthRequest="150"/>
 
-                    </Frame>
+                            <Label FontAttributes="Bold"
+                                       FontSize="12"
+                                       HorizontalOptions="Center"
+                                       Text="{Binding Wind, StringFormat='{0} km/h'}"
+                                       TextColor="Black" />
+                            <Label FontSize="11"
+                                       HorizontalOptions="Center"
+                                       Text="Wind Speed"
+                                       TextColor="#7D7D7D" />
+                        </VerticalStackLayout>
+
+                    </Border>
+
+                    <Border Grid.Row="2"
+                            HeightRequest="200"
+                            WidthRequest="300"
+                            BackgroundColor="White"
+                            Margin="0,350,0,0">
+
+                        <VerticalStackLayout>
+                            <Image Source="humidity.png"
+                                   HeightRequest="130"
+                                   WidthRequest="150"/>
+
+                            <Label FontAttributes="Bold"
+                                       FontSize="12"
+                                       HorizontalOptions="Center"
+                                       Text="{Binding Humidity, StringFormat='{0} %'}"
+                                       TextColor="Black" />
+                            <Label FontSize="11"
+                                       HorizontalOptions="Center"
+                                       Text="Humidity Levels"
+                                       TextColor="#7D7D7D" />
+                        </VerticalStackLayout>
+                    </Border>
+
+
                 </StackLayout>
+                     
+                <StackLayout Orientation="Horizontal"
+                             Margin="0,50,0,0"
+                             Spacing="80">
+                    <Border BackgroundColor="White"
+                            HeightRequest="200"
+                            WidthRequest="300">
+                        
+                        <HorizontalStackLayout>
+                            <Image Source="feelslike.png"
+                                   HorizontalOptions="Start"
+                                   WidthRequest="150"
+                                   HeightRequest="150"/>
+
+                            <VerticalStackLayout Margin="-20,60,0,0">
+                                <Label FontAttributes="Bold"
+                                       FontSize="20"
+                                       TextColor="Black"
+                                       Text="Feels Like"/>
+
+                                <Label FontAttributes="Bold"
+                                       FontSize="16"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"
+                                       Text="{Binding FeelsLike, StringFormat='{0}°C'}"/>
+                            </VerticalStackLayout>
+
+                        </HorizontalStackLayout>
+                    </Border>
+
+                    <Border BackgroundColor="White"
+                            HeightRequest="200"
+                            WidthRequest="300">
+                        <HorizontalStackLayout 
+                            Spacing="50"
+                            HorizontalOptions="Center">
+                            <VerticalStackLayout>
+                                <Image Source="sunrise.png"
+                                       HeightRequest="100"
+                                       WidthRequest="100"/>
+
+                                <Label FontAttributes="Bold"
+                                       FontSize="14"
+                                       TextColor="Black"
+                                       HorizontalTextAlignment="Center"
+                                       Text="Sunrise:"/>
+
+                                <Label FontAttributes="Bold"
+                                       FontSize="12"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="Black"
+                                       Text="{Binding Sunrise}"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout>
+                                <Image Source="sunset.png"
+                                       HeightRequest="100"
+                                       WidthRequest="100"/>
+                                
+                                <Label FontAttributes="Bold"
+                                       FontSize="14"
+                                       TextColor="Black"
+                                       HorizontalTextAlignment="Center"
+                                       Text="Sunset:"/>
+
+                                <Label FontAttributes="Bold"
+                                       FontSize="12"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="Black"
+                                       Text="{Binding Sunset}"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+
+                    </Border>
+                </StackLayout>
+
+                <ImageButton Source="reload.png"
+                             Command="{Binding ShowWeatherCommand}"
+                             HeightRequest="100"
+                             WidthRequest="100"/>
 
 
             </StackLayout>
